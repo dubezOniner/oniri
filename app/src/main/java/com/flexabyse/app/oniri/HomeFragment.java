@@ -1,6 +1,7 @@
 package com.flexabyse.app.oniri;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -34,7 +35,7 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
     private RecyclerView mRecyclerView;
-    private DreamsAdapter dreamsAdapter;
+    public static DreamsAdapter dreamsAdapter;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -79,9 +80,13 @@ public class HomeFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         List<DreamItem> list = new ArrayList<>();
-        list.add(new DreamItem("Walking on water", "11 August 2022", R.drawable.img_1));
-        list.add(new DreamItem("Walking on Sand", "12 August 2022", R.drawable.img_2));
-        list.add(new DreamItem("Walking on Air", "13 August 2022", R.drawable.img_3));
+
+        list.add(new DreamItem("Walking on air again", "16 August 2022", R.drawable.img_4));
+        list.add(new DreamItem("Walking on rocks", "15 August 2022", R.drawable.img_2));
+        list.add(new DreamItem("Walking on air", "13 August 2022", R.drawable.img_3));
+        list.add(new DreamItem("Walking on water", "12 August 2022", R.drawable.img_2));
+        list.add(new DreamItem("Walking on the Beach", "11 August 2022", R.drawable.img_1));
+
 
         // specify an adapter
         dreamsAdapter = new DreamsAdapter(getContext());
@@ -148,20 +153,38 @@ public class HomeFragment extends Fragment {
         // stores and recycles views as they are scrolled off screen
         class ViewHolder extends RecyclerView.ViewHolder {
             TextView label, date;
-            FrameLayout bg;
+            ImageView bg;
 
             ViewHolder(View itemView) {
                 super(itemView);
                 label = itemView.findViewById(R.id.title);
                 date = itemView.findViewById(R.id.date);
                 bg = itemView.findViewById(R.id.bg);
+
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int pos = getAdapterPosition();
+
+                        // check if item still exists
+                        if(pos != RecyclerView.NO_POSITION) {
+
+                            DreamItem dream = mData.get(pos);
+                            Intent detailIntent = new Intent(getContext(), DetailActivity.class);
+                            detailIntent.putExtra("title", dream.title);
+                            detailIntent.putExtra("date", dream.date);
+                            detailIntent.putExtra("img", dream.img_id);
+                            startActivity(detailIntent);
+                        }
+                    }
+                });
             }
 
             private void bindData(DreamItem item) {
 
                 label.setText(item.title);
                 date.setText(item.date);
-                bg.setBackgroundResource(item.img_id);
+                bg.setImageResource(item.img_id);
             }
         }
     }

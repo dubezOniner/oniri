@@ -10,5 +10,12 @@
     <color name="color_bg">#501FFF</color>
 
     <color name="search_bg">#0DFFFFFF</color>
+    <color name="light_gray">#AEAEAE</color>
+
+    <color name="nav_icon_normal">#99AFAFAF</color>
+    <color name="nav_icon_selected">#E91E63</color>
+
+    <color name="details_bg">#43322D</color>
+    <color name="recording_bg">#6C544C</color>
 
 </resources>

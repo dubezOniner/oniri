@@ -10,5 +10,5 @@ https://oniri.io
 
 ### Run pre-compiled demo APK:
 * Navigate to the release section of the repo
-* Download and install the demo apk ( requires enabling unknown sources from settings)
+* Download and install the demo apk (requires enabling unknown sources from settings)
 * Launch the app

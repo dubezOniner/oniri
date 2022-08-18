@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,38 +13,41 @@
         android:layout_height="match_parent"
         android:background="@drawable/background" />
 
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBar"
-        app:backgroundTint="@color/white"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:fabCradleMargin="0dp"
-        android:paddingEnd="10dp"
-        android:layout_gravity="bottom" >
+        android:layout_height="75dp"
+        android:layout_gravity="bottom">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true"
+            app:backgroundTint="@color/black"
+            app:srcCompat="@drawable/ic_add"
+            app:tint="@color/white" />
+
+        <FrameLayout
+            android:background="@drawable/bottom_nav_bg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:labelVisibilityMode="unlabeled"
-            app:itemIconTint="@drawable/selector"
-            app:itemTextColor="@drawable/selector"
-            android:background="@android:color/transparent"
-            app:menu="@menu/bottom_nav_menu">
+            android:layout_gravity="bottom">
 
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@android:color/transparent"
+                app:itemIconTint="@drawable/selector"
+                app:itemTextColor="@drawable/selector"
+                app:labelVisibilityMode="unlabeled"
+                app:menu="@menu/bottom_nav_menu">
 
-    </com.google.android.material.bottomappbar.BottomAppBar>
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:clickable="true"
-        app:backgroundTint="@color/black"
-        app:tint="@color/white"
-        app:layout_anchor="@id/bottomNavigationView"
-        app:srcCompat="@drawable/ic_add"/>
+        </FrameLayout>
+    </FrameLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout >
+</FrameLayout>

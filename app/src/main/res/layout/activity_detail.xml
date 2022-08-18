@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/details_bg"
+    tools:context=".DetailActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@drawable/back_btn"
+        android:scaleType="centerCrop"
+        android:src="@drawable/details_bg_splash" />
+
+    <TextView
+        android:id="@+id/debug"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="200dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/details_bg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="25dp"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sans_pro_bold"
+                        android:text="Title"
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sans_pro_bold"
+                        android:text="Date"
+                        android:textColor="@color/light_gray"
+                        android:textSize="21dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/sans_pro_bold"
+                            android:text="Story"
+                            android:textColor="@color/white"
+                            android:textSize="17dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/sans_pro_bold"
+                            android:text="Details"
+                            android:textColor="@color/light_gray"
+                            android:textSize="17dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/sans_pro_bold"
+                            android:text="Interpretation"
+                            android:textColor="@color/light_gray"
+                            android:textSize="17dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/highlight"
+                        android:layout_width="35dp"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white" />
+
+                    <RelativeLayout
+                        android:background="@drawable/recording_bg"
+                        android:id="@+id/recording"
+                        android:layout_marginTop="40dp"
+                        android:padding="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/ic_mic"
+                            android:id="@+id/btn_mic"
+                            android:tint="@color/light_gray"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_pro_bold"
+                            android:text="Voice Recoding"
+                            android:textColor="@color/light_gray"
+                            android:textSize="17dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="40dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/ic_play"
+                            android:id="@+id/btn_play_pause"
+                            android:layout_below="@+id/btn_mic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_toEndOf="@+id/btn_play_pause"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_below="@+id/btn_mic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/ic_waveform"
+                                android:id="@+id/waveform"
+                                android:scaleType="fitXY"
+                                android:tint="@color/light_gray"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sans_pro_bold"
+                                android:text="00:58"
+                                android:textColor="@color/light_gray"
+                                android:textSize="17dp"
+                                android:layout_marginTop="10dp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lorem_text"
+                        android:fontFamily="@font/sans_pro_bold"
+                        android:textColor="@color/white"
+                        android:textSize="21dp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1000dp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/sticky_fabs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_export"
+                    app:backgroundTint="@color/white"
+                    app:tint="@color/black" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_edit"
+                    app:backgroundTint="@color/white"
+                    app:tint="@color/black" />
+            </LinearLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_arrow_back"
+        app:backgroundTint="@color/details_bg"
+        app:tint="@color/white" />
+
+</FrameLayout>

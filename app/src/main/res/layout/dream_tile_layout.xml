@@ -1,44 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+<com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="18dp"
+    android:layout_marginBottom="18dp"
+    app:cardCornerRadius="20dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <FrameLayout
+    <ImageView
         android:id="@+id/bg"
-        android:background="@drawable/img_1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent" />
 
-        <RelativeLayout
-            android:layout_margin="6dp"
-            android:layout_gravity="bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <RelativeLayout
+        android:background = "@drawable/gradient_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/title"
-                android:textStyle="bold"
-                android:textSize="22dp"
-                android:textColor="@color/white"
-                android:text="Walking on water"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="35dp"
+            android:layout_height="3dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_above="@+id/title"
+            android:background="@color/white" />
 
-            <TextView
-                android:id="@+id/date"
-                android:textStyle="bold"
-                android:textSize="21dp"
-                android:textColor="@color/gray"
-                android:text="11 August 2022"
-                android:layout_marginTop="3dp"
-                android:layout_below="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </RelativeLayout>
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:id="@+id/title"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:fontFamily="@font/sans_pro_bold"
+            android:layout_above="@+id/date"
+            android:textColor="@color/white"
+            android:text="Walking on water"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
+        <TextView
+            android:id="@+id/date"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:fontFamily="@font/sans_pro_bold"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/light_gray"
+            android:text="11 August 2022"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
 
-
-    </FrameLayout>
-
-</RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
